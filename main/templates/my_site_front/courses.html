@@ -1,6 +1,5 @@
 {% extends 'layout.html' %}
 {% block body%}
- <a  class="make_new_course"  id="make_new_course" href="{% url  'make_new_course'  %}">make new course</a>
  <div class="all_courses">
    {% for course in courses %}
      <div class = "courses_item">
