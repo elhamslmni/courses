@@ -1,0 +1,8 @@
+{% extends 'layout.html' %}
+{% block body%}
+
+ {% for t in teachers %}
+ <a>{{t.username}}</a>
+  {% endfor %}
+
+{% endblock %}

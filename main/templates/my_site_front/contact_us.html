@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+{% block body%}
+
+<form id="contact_us_form" action="{% url  'contact_us' %}"  method="post">{% csrf_token %}
+     <label >email</label><br>
+      <input type="email"  placeholder="Enter you Email " name="email" required>
+     <br>
+    <label >type here</label><br>
+     <input type="text" placeholder="" name="text_content" required  maxlength="250" minlength="10"><br>
+     <input type="submit" value="send"></input>
+  </form>
+{% endblock %}

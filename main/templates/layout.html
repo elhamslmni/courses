@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    {% block head %}
+    {% endblock %}
+
+</head>
+<body>
+<ul>
+    <form id="search_form" action="{% url  'search' %}"  method="post">
+        {% csrf_token %}
+        <input type="search" placeholder="Search.." name="search" minlength="1">
+        <input type="submit" value="search"></input>
+    </form>
+    <a id="homepage" href="{% url  'home_page'  %}">home</a>
+    <a id="contact_us" href="{% url  'contact_us'  %}">contact_us</a>
+    {% if request.user.is_authenticated is True %}
+        <a id="logout" href="{% url  'log_out'  %}">logout</a>
+        <a id="profile" href="{% url  'profile'  %}">profile</a>
+        <a id="setting" href="{% url  'setting_page'  %}">setting</a>
+        <a id="panel" href="{% url  'panel'  %}">panel</a>
+    {% endif %}
+    {% if request.user.is_authenticated is not True %}
+        <a id="login" href="{% url  'login_page'  %}">login</a>
+        <a id="register" href="{% url  'register_page'  %}">register</a>
+    {% endif %}
+
+
+</ul>
+{% block body %}
+{% endblock %}
+
+</body>
+</html>

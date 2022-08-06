@@ -1,0 +1,9 @@
+{% extends 'layout.html' %}
+{% block body%}
+
+ {% if request.user.is_superuser%}
+ <a class="make_new_course" id="make_new_course" href="{% url  'make_new_course'  %}">make new course</a>
+  {% endif %}
+<a id="courses" href="{% url  'courses'  %}">all courses</a>
+   <p>welcome to your panel</p>
+{% endblock %}

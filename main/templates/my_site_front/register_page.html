@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+{% block body%}
+
+<!-- <strong>{{ form.errors }}</strong>-->
+<form action="{% url  'register_page' %}"  method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+     <input type="submit" value="register"></input>
+</form>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+{% block body%}
+
+
+
+<p>username:</p>
+<span>{{ request.user.username }}</span>
+<p>name:</p>
+<span> {{ request.user.first_name }}</span>
+<p>lastname:</p>
+<span>{{ request.user.last_name }}</span>
+<p>bio:</p>
+<span>{{ profile.bio }}</span>
+<p>gender:</p>
+<span>{{ profile.gender }}</span>
+
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+{% block body%}
+<form id="setting_form" action="{% url  'setting_page' %}"  method="post">{% csrf_token %}
+     <label ><h1>first name</h1> </label><br>
+      <input type="text"  placeholder="Enter first name" name="first_name" >
+     <br>
+      <label ><h1>last name</h1></label><br>
+     <input type="text" placeholder="Enter last name" name="last_name"><br>
+       <label ><h1>bio</h1></label><br>
+     <input type="text" placeholder="Enter bio" name="bio" value="{{profile.bio}}"><br>
+
+     <label ><h1>gender</h1></label><br>
+      <select name="gender"   id="gender" >
+    <option value="female" >female</option>
+    <option value="male">male</option>
+    </select>
+     <input type="submit" value="save"></input>
+  </form>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+{% block body%}
+
+<!-- <strong>{{ form.errors }}</strong>-->
+<form action="{% url  'make_new_course' %}"  method="post">{% csrf_token %}
+     <label ><h1>department</h1></label><br>
+      <input type="text"  placeholder="" name="department" required>
+     <br>
+    <label ><h1>teacher_name</h1></label><br>
+      <input type="text"  placeholder="" name="teacher_name" required>
+     <br>
+       <label ><h1>name</h1></label><br>
+      <input type="text"  placeholder="" name="name" required>
+     <br>
+     <label ><h1>course_number</h1></label><br>
+      <input type="number"  placeholder="" name="course_number" required>
+     <br>
+     <label ><h1>group_number</h1></label><br>
+      <input type="number"  placeholder="" name="group_number" required>
+     <br>
+     <label ><h1>start_time</h1></label><br>
+      <input type="time"  placeholder="" name="start_time" required>
+     <br>
+     <label ><h1>end_time</h1></label><br>
+      <input type="time"  placeholder="" name="end_time" required>
+     <br>
+     <label ><h1>first_day</h1></label><br>
+      <select name="first_day" id="first_day">
+    <option value="sunday">sunday</option>
+    <option value="monday">monday</option>
+    <option value="tuesday">tuesday</option>
+    <option value="wednesday">wednesday</option>
+  </select>
+    <br>
+     <label ><h1>second_day</h1></label><br>
+      <select name="second_day" id="second_day">
+    <option value="sunday">sunday</option>
+    <option value="monday">monday</option>
+    <option value="tuesday">tuesday</option>
+    <option value="wednesday">wednesday</option>
+  </select>
+     <input type="submit" value="add"></input>
+  </form>
+{% endblock %}

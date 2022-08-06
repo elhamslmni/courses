@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+{% block body%}
+ <a  class="make_new_course"  id="make_new_course" href="{% url  'make_new_course'  %}">make new course</a>
+ <div class="all_courses">
+   {% for course in courses %}
+     <div class = "courses_item">
+         <p>{{ course.department}}</p>
+     </div>
+    <div class = "courses_item">
+              <p>{{course.name}}</p>
+         </div>
+    <div class = "courses_item">
+               <p>{{course.first_day}}</p>
+          <p>{{course.second_day}}</p>
+         </div>
+    <div class = "courses_item">
+                   <p>{{course.start_time}}</p>
+           <p>until</p>
+          <p>{{course.end_time}}</p>
+             </div>
+    <br>
+   {% endfor %}
+     </div>
+
+
+{% endblock %}
